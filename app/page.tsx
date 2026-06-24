@@ -1,31 +1,28 @@
-import { CategoryPills } from "@/components/CategoryPills";
-import { FeaturedPosts } from "@/components/FeaturedPosts";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
-import { HeroSection } from "@/components/HeroSection";
-import { LatestArticles } from "@/components/LatestArticles";
+import { BrandsGrid } from "@/components/BrandsGrid";
 import { NewsletterSection } from "@/components/NewsletterSection";
-import { Sidebar } from "@/components/Sidebar";
+import { PageHero } from "@/components/PageHero";
+import { ProductGrid } from "@/components/ProductGrid";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="page-wrap">
-      <Header />
+    <div className="site-shell site-shell--spaced">
+      <PageHero
+        eyebrow="Welcome home"
+        title="Premium pet care for cozy, design-loving homes"
+        description="Shop polished essentials, thoughtful feeding picks, and everyday comforts that keep tails wagging and homes looking beautiful."
+        primaryLabel="Shop now"
+        primaryHref="/shop"
+        secondaryLabel="Read the blog"
+        secondaryHref="/blog"
+        cardTitle="Smooth browsing across every menu page, from first click to checkout-ready details."
+        cardText="The updated CozyPaws experience keeps navigation clear, responsive, and easy to trust on every screen size."
+        statLabel="Customer favorite"
+        statValue="Curated products for naps, walks, meals, and play"
+      />
 
-      <div className="site-shell site-shell--spaced">
-        <HeroSection />
-        <FeaturedPosts />
-        <CategoryPills />
-
-        <section className="blog-layout">
-          <LatestArticles />
-          <Sidebar />
-        </section>
-
-        <NewsletterSection />
-      </div>
-
-      <Footer />
-    </main>
+      <ProductGrid />
+      <BrandsGrid />
+      <NewsletterSection />
+    </div>
   );
 }

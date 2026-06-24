@@ -1,80 +1,120 @@
-# CozyPaws Pet Blog
+# CozyPaws Navigation Refresh
 
-Modern, ecommerce-inspired pet blog landing page for **CozyPaws**, created for ticket **PAP-461**.
+Multi-page CozyPaws storefront and blog experience for ticket **PAP-462**.
 
 ## Overview
 
-This project delivers a polished **desktop-first pet blog page UI** with a premium, friendly visual style inspired by modern pet ecommerce brands.
+This update fixes the top-level website navigation so every primary menu item opens a real page and keeps a consistent CozyPaws experience across the site.
 
-### What was built
+## What was built
 
-- **Top contact strip** with website, email, and phone details
-- **Main header/navigation** with CozyPaws branding, primary nav links, and utility icons
-- **Blog hero section** featuring:
-  - prominent editorial headline
-  - supporting subtitle
-  - pet-focused image composition
-  - featured content badge/card treatment
-  - orange primary CTA
-- **Featured Posts** section with three highlighted blog cards
-- **Category** pills/cards for common pet content topics
-- **Latest Articles** grid for broader blog discovery
-- **Optional-style sidebar content** including search, recent posts, categories, newsletter, and promo support areas
-- **Newsletter signup** block with premium styling
-- **Footer** aligned to the same visual system
-- **Responsive layout behavior** for narrower viewports
+### Functional navigation
 
-## Visual direction
+The primary navigation now routes correctly to:
 
-The page follows the requested **CozyPaws** brand language:
+- `/` — Home
+- `/shop` — Shop
+- `/delivery-payment` — Delivery and Payment
+- `/brands` — Brands
+- `/blog` — Blog
 
-- **Soft mint green** background foundation
-- **Deep forest green** headings and structural typography
-- **White cards** for content grouping
-- **Bright orange** accents for calls to action and highlights
-- **Rounded corners**, **soft shadows**, and **clean spacing** throughout
+Each page keeps the navbar visible, uses the same brand styling, and highlights the active menu item so users can see where they are.
 
-## Getting started
+### New page coverage
 
-### Install dependencies
+- **Home**
+  - premium hero section
+  - featured product content
+  - brand highlights
+  - newsletter CTA
+- **Shop**
+  - product grid
+  - category filter chips
+  - shopping-focused hero content
+- **Delivery and Payment**
+  - shipping highlights
+  - payment methods
+  - delivery timeline
+  - FAQ content
+- **Brands**
+  - featured brand cards
+  - brand-focused hero messaging
+  - newsletter CTA
+- **Blog**
+  - dedicated blog landing page
+  - featured posts
+  - latest articles
+  - newsletter CTA
+
+### Experience improvements
+
+- responsive navigation for desktop, tablet, and mobile
+- active menu highlighting using route-aware state
+- shared CozyPaws visual system across all pages
+- smooth GSAP-powered reveal transitions for page content
+- removal of broken placeholder navigation behavior
+
+## Design system retained
+
+The implementation keeps the requested CozyPaws look and feel:
+
+- mint green background
+- dark forest green typography
+- orange CTA buttons
+- rounded cards
+- soft shadows
+- clean premium pet ecommerce layout
+
+## Tech notes
+
+- **Next.js 16** App Router
+- **React 19**
+- **TypeScript**
+- **GSAP** for lightweight page reveal animation
+
+## Setup
+
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-### Run locally
+## Run locally
+
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-Then open the local development URL shown by Next.js in your terminal.
-
-### Production build
+Build for production:
 
 ```bash
 npm run build
-npm start
 ```
 
-## Ticket reference
+Run the production server:
 
-- **Ticket:** PAP-461
-- **Feature:** Create a modern pet blog page
-- **Implementation commit:** `feat(pap-461): implement Create a modern pet blog page`
+```bash
+npm run start
+```
 
-## Notes for review
+## Release-readiness summary
 
-Reviewers should confirm:
+This ticket is documented as a routed multi-page navigation fix rather than a single-page anchor implementation.
 
-- brand styling matches the mint / forest / white / orange palette
-- blog sections are present and visually distinct
-- ecommerce-inspired presentation feels premium and pet-friendly
-- layout remains usable and readable across responsive breakpoints
+Expected user-visible behavior:
+
+- all five navbar items open valid pages
+- no broken menu links
+- consistent header/footer across routes
+- visible active state in the navbar
+- mobile menu remains usable on smaller screens
+- page transitions feel smoother without blocking navigation
 
 ## Documentation artifacts
 
-Additional handoff notes are available in:
-
-- `CHANGELOG.md`
-- `docs/IMPLEMENTATION_NOTES.md`
+- `README.md` — feature summary, setup, and run instructions
+- `CHANGELOG.md` — PAP-462 release entry
+- `docs/IMPLEMENTATION_NOTES.md` — deployment and PR handoff summary

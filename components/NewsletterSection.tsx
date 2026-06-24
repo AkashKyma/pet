@@ -1,11 +1,11 @@
 export function NewsletterSection() {
   return (
-    <section className="newsletter-banner">
+    <section className="newsletter-banner" data-reveal>
       <div>
         <span className="section-kicker">Stay in the loop</span>
-        <h2>Get Pet Care Tips Delivered Weekly</h2>
+        <h2>Get weekly pet care notes and premium product drops</h2>
         <p>
-          Join the CozyPaws list for expert guidance, product spotlights, and heartwarming pet stories tailored for caring homes.
+          Join the CozyPaws list for trusted advice, new arrivals, and cozy pet-home inspiration delivered weekly.
         </p>
       </div>
 

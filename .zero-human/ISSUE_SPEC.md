@@ -1,123 +1,66 @@
-# PAP-461: Create a modern pet blog page
+# PAP-462: Fix the website navigation so all menu pages work correctly.
 
-Create a modern **pet blog page UI** for a brand called **CozyPaws**, matching the same design style as a premium pet ecommerce website. Use a **soft mint green background**, **deep forest green headings**, **white content cards**, and **bright orange accents** for buttons and highlights. The design should feel **clean, friendly, playful, and premium**.
+Fix the website navigation so all menu pages work correctly.
 
-### **Page Structure**
+The current navigation links are:
 
-Design a **desktop blog page** with a polished and visually appealing layout.
+Home
+Shop
+Delivery and Payment
+Brands
+Blog
 
-### **Top Section**
+Right now, these pages are not opening or navigating properly. Please make each navigation item functional and connect it to the correct page/section.
 
-* Add a **top contact strip** with:
-  * website: `nixtio.com`
-  * email: [`hello@nixtio.com`](mailto:hello@nixtio.com)
-  * phone: `+48577612187`
-* Add a **main header/navbar** with:
-  * CozyPaws logo with paw icon on the left
-  * navigation links: **Home, Shop, Delivery and Payment, Brands, Blog**
-  * right-side icons: **search, wishlist, cart, user profile**
+Requirements:
 
-### **Blog Hero Section**
+1. Create or connect these pages:
 
-Create a hero section for the blog page with:
+* Home page
+* Shop page
+* Delivery and Payment page
+* Brands page
+* Blog page
 
-* Large headline: **“Tips, Stories & Advice for Pet Lovers”**
-* Short subtitle:
-  **“Explore expert pet care tips, training guides, product reviews, and heartwarming stories for your furry friends.”**
-* Add a friendly image composition featuring pets like:
-  * a happy golden retriever
-  * a playful cat
-  * maybe a small dog or puppy
-* Add a featured blog card or badge such as:
-  * **Featured Article**
-  * **New This Week**
-* Add an orange CTA button:
-  * **Read Latest Articles**
+1. When the user clicks any navbar link, it should navigate to the correct page without errors.
+2. Keep the same design style across all pages:
 
-### **Featured Blog Posts Section**
+* mint green background
+* dark forest green text
+* orange CTA buttons
+* rounded cards
+* soft shadows
+* clean premium pet ecommerce layout
+* CozyPaws branding
 
-Create a section titled **“Featured Posts”** with **3 blog cards** in a row.
+1. Make the active menu item highlighted so users know which page they are currently viewing.
+2. Make the navigation responsive for desktop, tablet, and mobile.
+3. If this is a single-page website, use smooth scrolling sections with correct anchor links:
 
-Each blog card should include:
+* \#home
+* \#shop
+* \#delivery-payment
+* \#brands
+* \#blog
 
-* featured image with a pet
-* category tag (Pet Care, Training, Nutrition, Stories, Reviews)
-* blog title
-* short excerpt
-* author name
-* date
-* read more button
+1. If this is a multi-page website, use correct routes:
 
-Example blog titles:
+* /
+* /shop
+* /delivery-payment
+* /brands
+* /blog
 
-1. **10 Essential Tips for Keeping Your Dog Healthy**
-2. **How to Create the Perfect Cozy Space for Your Cat**
-3. **Best Toys to Keep Your Pets Happy and Active**
+1. Make sure there are no broken links, console errors, or missing page components.
+2. Add basic content to each page:
 
-### **Categories Section**
+* Home: hero section and featured pet products
+* Shop: product grid with filters/categories
+* Delivery and Payment: shipping information, payment methods, delivery timeline, FAQs
+* Brands: featured pet brands with logo cards
+* Blog: blog hero section, featured posts, latest articles, newsletter section
 
-Add a category section with rounded cards or pill buttons for:
+1. Keep the navbar visible and consistent on every page.
 
-* Dog Care
-* Cat Care
-* Pet Nutrition
-* Training Tips
-* Product Reviews
-* Pet Stories
 
-Use icons or small illustrations for each category.
-
-### **Latest Articles Section**
-
-Add a larger blog listing area with multiple article cards in a clean grid layout.
-
-Each article card should include:
-
-* image thumbnail
-* title
-* short description
-* category
-* publication date
-* “Read More” button
-
-### **Sidebar (Optional)**
-
-Add a stylish blog sidebar containing:
-
-* search box
-* recent posts
-* popular categories
-* newsletter subscribe box
-* small promotional product card
-
-### **Newsletter Section**
-
-Add a premium newsletter subscribe area with:
-
-* heading: **“Get Pet Care Tips Delivered Weekly”**
-* short text encouraging users to subscribe
-* email input field
-* orange subscribe button
-
-### **Footer**
-
-Create a footer consistent with the homepage style, including:
-
-* CozyPaws logo
-* quick links
-* customer support links
-* social media icons
-* copyright text
-
-***
-
-## **Style Instructions**
-
-* Use a **modern ecommerce-inspired blog layout**
-* Keep the page **minimal, soft, premium, and pet-friendly**
-* Use **rounded corners**, **soft shadows**, and **clean spacing**
-* Typography should be bold and modern
-* Visuals should feel warm, friendly, and engaging
-* Maintain the same visual identity as the homepage
-* Use colors: **mint green, dark forest green, white, and orange**
-* Make the layout **responsive**
+   And Makes Transition Smooth Use GSAP And Animation Which makes UI Smooth

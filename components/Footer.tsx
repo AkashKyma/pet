@@ -1,6 +1,11 @@
-const quickLinks = ["Home", "Shop", "Blog", "Brands"];
-const supportLinks = ["Delivery & Payment", "Returns", "FAQ", "Contact"];
-const socialLinks = ["Instagram", "Pinterest", "TikTok"];
+import Link from "next/link";
+import { navItems } from "@/data/siteData";
+
+const supportLinks = [
+  { label: "Delivery and Payment", href: "/delivery-payment" },
+  { label: "Brands", href: "/brands" },
+  { label: "Blog", href: "/blog" }
+];
 
 export function Footer() {
   return (
@@ -10,20 +15,20 @@ export function Footer() {
           <span className="brand-mark__paw">🐾</span>
           <div>
             <p className="brand-mark__name">CozyPaws</p>
-            <p className="brand-mark__tag">Modern pet stories & care tips</p>
+            <p className="brand-mark__tag">Clean, cozy pet ecommerce</p>
           </div>
         </div>
         <p>
-          A premium pet blog packed with practical advice, playful inspiration, and trusted picks for cozy homes.
+          CozyPaws brings together premium pet care, playful design, and dependable delivery for modern pet homes.
         </p>
       </div>
 
       <div>
-        <h3>Quick Links</h3>
+        <h3>Browse</h3>
         <ul>
-          {quickLinks.map((link) => (
-            <li key={link}>
-              <a href="#">{link}</a>
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <Link href={item.href}>{item.label}</Link>
             </li>
           ))}
         </ul>
@@ -32,23 +37,18 @@ export function Footer() {
       <div>
         <h3>Support</h3>
         <ul>
-          {supportLinks.map((link) => (
-            <li key={link}>
-              <a href="#">{link}</a>
+          {supportLinks.map((item) => (
+            <li key={item.href}>
+              <Link href={item.href}>{item.label}</Link>
             </li>
           ))}
         </ul>
       </div>
 
       <div>
-        <h3>Follow Along</h3>
-        <ul>
-          {socialLinks.map((link) => (
-            <li key={link}>
-              <a href="#">{link}</a>
-            </li>
-          ))}
-        </ul>
+        <h3>Newsletter</h3>
+        <p>Weekly pet care ideas, shopping picks, and new drops from the CozyPaws journal.</p>
+        <div className="footer-pill">Fresh every Thursday</div>
       </div>
 
       <p className="site-footer__copyright">© 2026 CozyPaws. All rights reserved.</p>

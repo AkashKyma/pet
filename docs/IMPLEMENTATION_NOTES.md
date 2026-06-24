@@ -1,64 +1,112 @@
-# PAP-461 Implementation Notes
+# PAP-462 Implementation Notes
 
-## Scope
+## Ticket
 
-This ticket delivers a **modern pet blog page UI** for **CozyPaws**.
+**PAP-462 — Fix the website navigation so all menu pages work correctly**
 
-The implementation was already completed in commit:
+## Scribe scope
 
-- `04d10c4` — `feat(pap-461): implement Create a modern pet blog page`
+This handoff covers documentation and release preparation only.
+No application source files were changed during the Scribe phase.
 
-This document is intended as a concise handoff artifact for deployment review and automated PR completion.
+## Implemented shape
 
-## Delivered experience
+The completed implementation uses a **Next.js App Router multi-page structure**.
 
-The page includes:
+### Routes now present
 
-- contact strip
-- ecommerce-style header/navigation
-- hero section with featured article treatment and CTA
-- featured posts row
-- category discovery section
-- latest article grid
-- supporting sidebar content
-- newsletter subscription section
-- branded footer
+- `/` — Home
+- `/shop` — Shop
+- `/delivery-payment` — Delivery and Payment
+- `/brands` — Brands
+- `/blog` — Blog
 
-## UI/brand expectations
+## What changed in the implementation
 
-The delivered page is expected to reflect the requested visual system:
+### Navigation
 
-- soft mint green page background
-- deep forest green headings and key text
-- white content cards
-- bright orange accent color for CTAs and emphasis
-- rounded corners and soft shadows
-- warm, playful, premium presentation
+- Primary navbar links now use real routes instead of placeholders.
+- The current route is highlighted in the navbar with active-state styling.
+- Mobile navigation is toggle-based and closes after link selection.
+- Header branding and CTA remain consistent across pages.
 
-## Source footprint
+### Shared visual system
 
-Implementation work appears to be organized across:
+The implementation keeps the requested CozyPaws design language:
 
-- `app/` for page structure and global styles
-- `components/` for modular section rendering
-- `data/` for blog content data used by the UI
+- mint green page background
+- dark forest green text
+- orange call-to-action buttons
+- rounded card surfaces
+- soft shadows
+- premium pet ecommerce presentation
 
-## Release readiness checklist
+### Page content coverage
 
-Before merge/deploy, confirm:
+- **Home:** hero, product-focused content, brand highlights, newsletter
+- **Shop:** product grid and category filters
+- **Delivery and Payment:** shipping info, payment methods, delivery timeline, FAQs
+- **Brands:** featured brand cards and supporting overview content
+- **Blog:** hero, featured posts, latest articles, newsletter
 
-- `npm install` completes successfully in CI/local
-- `npm run dev` renders the page without runtime issues
-- `npm run build` passes for production output
-- responsive layout remains intact at standard breakpoints
-- required blog sections and brand styling are present
+### Motion
 
-## Scribe handoff
+- GSAP was added for lightweight reveal transitions.
+- Route transitions use animated reveal behavior on page content blocks.
+- Motion is decorative and should not block page navigation.
 
-Scribe updated documentation only:
+## Key implementation artifacts
 
-- `README.md`
-- `CHANGELOG.md`
-- `docs/IMPLEMENTATION_NOTES.md`
+### Routes
 
-No application source files were modified during this phase.
+- `app/page.tsx`
+- `app/shop/page.tsx`
+- `app/delivery-payment/page.tsx`
+- `app/brands/page.tsx`
+- `app/blog/page.tsx`
+
+### Shared UI
+
+- `components/Header.tsx`
+- `components/Footer.tsx`
+- `components/PageHero.tsx`
+- `components/PageTransition.tsx`
+- `components/ProductGrid.tsx`
+- `components/BrandsGrid.tsx`
+- `components/DeliveryContent.tsx`
+- `components/BlogContent.tsx`
+
+### Shared content data
+
+- `data/siteData.ts`
+
+## Dependency note
+
+The implementation includes:
+
+- `gsap`
+
+## Suggested release verification
+
+Before deployment or PR merge completion, confirm:
+
+- `npm install` succeeds cleanly
+- `npm run build` succeeds cleanly
+- each top nav item opens the correct route
+- the active nav item is highlighted correctly on every page
+- mobile navigation works without layout breakage
+- no console errors appear while moving between routes
+- shared branding and layout remain consistent across Home, Shop, Delivery and Payment, Brands, and Blog
+
+## Terminal log summary for this Scribe phase
+
+- Verified recent git history and confirmed implementation commit `feat(pap-462): implement working CozyPaws multi-page navigation`
+- Reviewed routed page files and shared navigation components to document actual behavior
+- Updated `README.md`
+- Updated `CHANGELOG.md`
+- Added `docs/IMPLEMENTATION_NOTES.md`
+
+## Deployment / automated PR handoff
+
+This branch is documentation-ready for automated PR completion.
+The code implementation and testing artifacts were already completed before the Scribe pass.
